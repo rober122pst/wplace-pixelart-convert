@@ -328,8 +328,15 @@ function displayUsedColors(colors) {
     });
 }
 
-// Chame convertImage() uma vez ao carregar a página se já houver uma imagem predefinida
-// ou após a primeira imagem ser carregada. Por exemplo:
-// window.onload = () => {
-//    convertImage();
-// };
+function downloadImage() {
+    const imageURL = pixelArtCanvas.toDataURL('image/png');
+    const link = document.createElement('a');
+  
+    link.href = imageURL;
+    link.download = 'pixel-art.png';
+ 
+    document.body.appendChild(link);
+    link.click();
+    
+    document.body.removeChild(link);
+}

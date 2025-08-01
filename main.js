@@ -335,8 +335,5 @@ function downloadImage() {
     link.href = imageURL;
     link.download = 'pixel-art.png';
  
-    document.body.appendChild(link);
     link.click();
-    
-    document.body.removeChild(link);
 }
